@@ -1,0 +1,169 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url("https://t3.ftcdn.net/jpg/01/34/11/58/360_F_134115811_zDBMdIni0jDuAMVpFsovAK9H3xUcrTMg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  max-width: 780px;
+  border-radius: 16px;
+  padding: 35px 40px;
+  background-color: #000;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+
+header {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+header h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+header .column {
+  display: flex;
+  align-items: center;
+}
+
+header .column span {
+  font-weight: 500;
+  margin-right: 12px;
+  font-size: 1.1rem;
+}
+
+.volume-slider input {
+  accent-color: #fff;
+  cursor: pointer;
+}
+
+.keys-check input {
+  width: 60px;
+  height: 30px;
+  appearance: none;
+  border-radius: 30px;
+  background-color: #4b4b4b;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.keys-check input::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  background-color: #8c8c8c;
+  top: 50%;
+  left: 0.3rem;
+  border-radius: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.keys-check input:checked::before {
+  left: 2.1rem;
+  background-color: #fff;
+}
+
+.piano-keys {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.piano-keys .key {
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  color: #a2a2a2;
+  position: relative;
+  text-transform: uppercase;
+  transition: background 0.2s ease;
+}
+
+.piano-keys .white {
+  width: 70px;
+  height: 200px;
+  border: 1px solid #111;
+  border-radius: 8px;
+  background: linear-gradient(to bottom, #fff 96%, #e6e6e6 4%);
+}
+
+.piano-keys .black {
+  width: 50px;
+  height: 120px;
+  z-index: 2;
+  margin: 0 -25px;
+  border: 1px solid #111;
+  border-radius: 0 0 5px 5px;
+  background: linear-gradient(to bottom, #333, #000);
+}
+
+.piano-keys span {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.piano-keys .white.active {
+  box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, #fff 0%, #ddd 100%);
+}
+
+.piano-keys .black.active {
+  box-shadow: inset -3px 3px 10px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(to bottom, #000, #434343);
+}
+
+.piano-keys .key.hide span {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 25px 20px;
+  }
+
+  header h2 {
+    font-size: 1.3rem;
+  }
+
+  header .column span {
+    font-size: 1rem;
+  }
+
+  .piano-keys .white {
+    width: 45px;
+    height: 160px;
+  }
+
+  .piano-keys .black {
+    width: 30px;
+    height: 100px;
+    margin: 0 -15px;
+  }
+
+  .piano-keys span {
+    font-size: 0.9rem;
+  }
+}
